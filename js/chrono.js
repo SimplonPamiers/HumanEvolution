@@ -1,8 +1,6 @@
 var age = parseInt($(".age").html());
 var taille = parseInt($(".taille").html());
-
-var sexe = $(".sexe").html().substring(0,5);
-
+var sexe = parseInt($(".sexe").html())
 
 function chrono() {
     var year = parseInt($(".chrono").html());
@@ -22,37 +20,37 @@ function evolution() {
     $(".taille").html(taille.toFixed(1) + ' cm');
     age++;
 if (sexe===homme){
-     if (age <= 3) {
+     if (age <= 3 === ) {
         taille = taille + 20;
-        $(".img").attr('src', 'img/bebe.svg');
+        $(".sexe").append(src)
     } else if (age <= 12) {
         taille = taille + 5;
-        $(".img").attr('src', 'img/enfant.svg');
     } else if (age <= 17) {
-            taille = taille + 2;
-            $(".img").attr('src', 'img/' + sexe + 'A.svg');
-    } else if (age <= 50) {
+        taille = taille + 2;
+    } else if (age <= 70) {
         taille = taille + 0;
-        $(".img").attr('src', 'img/' + sexe + 'J.svg');
-    }   else if (age <= 70) {
-        taille = taille + 0;
-        $(".img").attr('src', 'img/' + sexe + 'M.svg');
     } else {
         taille = taille - 0.1;
-        $(".img").attr('src', 'img/' +sexe + 'V.svg');
     };
 }
+else{
+}
    
-};
-
-function esperancedevie(max){
-    return Math.floor(Math.random(0) * Math.floor(100))
+function generateAvatar() {
+    var lifeSpan = Math.floor(Math.random()*100);
+    console.log ('lifespan', lifeSpan);
     
-}
-console.log(esperancedevie(5))
+    var birthSize = (Math.random() * (57 - 42) + 42).toFixed(1);
+    console.log('birthSize',birthSize); 
+    
+    var growth = Math.random() * (1.2 - 0.8) + 0.8;
+    console.log('growth',growth);
 
-function taille(max){
-    return Math.floor(Math.random(42) * Math.floor(57))
-
+    var sexArray = ['Homme','Femme'];
+    var genre = sexArray[Math.floor(Math.random()*2)];
+    console.log(genre);    
 }
-console.log(esperancedevie())
+
+generateAvatar();
+
+
