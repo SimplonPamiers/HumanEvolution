@@ -1,14 +1,14 @@
 var age = parseInt($(".age").html());
 var taille = parseInt($(".taille").html());
 
-function chrono(){
+function chrono() {
     var year = parseInt($(".chrono").html());
-    
-    var chrono = setInterval(function(){
+
+    var chrono = setInterval(function() {
         $(".chrono").html(year);
         evolution();
         year++;
-        if(year>2000){
+        if (year > 2000) {
             clearInterval(chrono);
         }
     }, 100);
@@ -16,8 +16,9 @@ function chrono(){
 
 function evolution() {
     $(".age").html(age + ' ans / ');
-    $(".taille").html(taille + ' cm');
+    $(".taille").html(taille.toFixed(1) + ' cm');
     age++;
+<<<<<<< HEAD
     taille = taille + 2;
     if (age>=3){
     taille=taille +20;    
@@ -36,3 +37,18 @@ function evolution() {
 //     sous 0,1 cm//
 
 
+=======
+
+    if (age <= 3) {
+        taille = taille + 20;
+    } else if (age <= 12) {
+        taille = taille + 5;
+    } else if (age <= 17) {
+        taille = taille + 2;
+    } else if (age <= 70) {
+        taille = taille + 0;
+    } else {
+        taille = taille - 0.1;
+    };
+};
+>>>>>>> 782e6ea8dc4d7e77c8c887136a2a9178ba703273
