@@ -41,3 +41,23 @@ function evolution() {
         $(".img").attr('src', 'img/' +sexe + 'V.svg');
     };
 };
+
+
+
+
+function generateAvatar() {
+    var lifeSpan = Math.floor(Math.random()*100);
+    console.log ('lifespan', lifeSpan);
+    
+    var birthSize = (Math.random() * (57 - 42) + 42).toFixed(1);
+    console.log('birthSize',birthSize); 
+    
+    var growth = Math.random() * (1.2 - 0.8) + 0.8;
+    console.log('growth',growth);
+
+    var sexArray = ['Homme','Femme'];
+    var genre = sexArray[Math.floor(Math.random()*2)];
+    console.log(genre);    
+}
+
+generateAvatar();
