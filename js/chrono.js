@@ -1,6 +1,27 @@
-var age = parseInt($(".age").html());
-var taille = parseInt($(".taille").html());
-var sexe = $(".sexe").html().substring(0,5);
+// var age = parseInt($(".age").html());
+// var taille = parseInt($(".taille").html());
+// var sexe = $(".sexe").html().substring(0,5);
+function randomInt(nombre_max) {
+    return Math.floor(Math.random() * Math.floor(nombre_max));
+}
+var esperance = randomInt(101);
+console.log(esperance);
+
+var randomS = randomInt(2);
+if (randomS<1) {
+    sexe = 'Homme';
+} else {
+    sexe = 'Femme';
+};
+console.log(sexe);
+
+var taille = randomInt(16) + 42;
+console.log(taille);
+
+var croissance = (randomInt(5) + 8)/10;
+console.log(croissance);
+
+
 
 
 function chrono() {
