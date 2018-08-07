@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-
 body {
     font-family: 'Indie Flower', cursive;
 }
@@ -34,6 +32,14 @@ img {
     margin: 70px;
 }
 
+@media (max-width: 720px) {
+    .informations {
+        margin-top: 60px;
+    }
+}
+
 .button {
-    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
