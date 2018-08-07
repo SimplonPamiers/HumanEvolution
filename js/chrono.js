@@ -4,7 +4,7 @@ function chrono(){
     var chrono = setInterval(function(){
         $(".chrono").html(year);
         year++;
-        if(year==2001){
+        if(year>2000){
             clearInterval(chrono);
         }
     }, 100);
