@@ -1,76 +1,50 @@
-font-family: 'Indie Flower', cursive;
+
+body {
+    font-family: 'Indie Flower';
+    /* margin: 0 auto; */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
 
 .wrapper {
-display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.un{
-  background-color: gray;
-  border:1px solid black;
-  width: 100px;
-  height:100px;
-   grid-column: 1 / 3;
-  grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+.img {
+    width: 90px;
+    height: 90px;
 }
 
-.deux{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
-	  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-
+.grid_col {
+    background-color: grey;
+    border: solid 2px rgb(32, 26, 26);
+    border-radius: 3%;
 }
 
-.trois{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
-	  grid-column: 1;
-  grid-row: 3 / 3;
+.sexe, .age, .taille {
+    margin: 2%;
 }
 
-.quatre{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cinq{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
-}
+@media (max-width: 536px) {
+    .sexe, .age, .taille {
+        display: block; 
+        margin-left: 25%;
+    }
 
-.six{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
+    .responsive_row {
+        display: block;
+    }
 }
-
-.sept{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
-}
-
-.huit{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
-}
-
-.neuf{
-	width: 100px;
-	height:100px;
-	background-color: gray;
-	border:1px solid black;
-}
+>>>>>>> 0cb49a8b6e04ef54b6b20552d96719e3c78b5984
