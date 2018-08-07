@@ -1,3 +1,4 @@
+//My version
 var chrono_content = 1900;
 $( ".chrono" ).html(chrono_content);
 
@@ -15,5 +16,4 @@ $( ".btn" ).click(function chrono()
             clearInterval(inter);
             }
         }, 100);
-    });
-        
+    });      
