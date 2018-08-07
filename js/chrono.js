@@ -1,12 +1,15 @@
 // var age = parseInt($(".age").html());
 // var taille = parseInt($(".taille").html());
 // var sexe = $(".sexe").html().substring(0,5);
+
+//Pas bon car on ne doit pas arrondir partout !!! La taille peut avoir des virgules
 function randomInt(nombre_max) {
     return Math.floor(Math.random() * Math.floor(nombre_max));
 }
 var esperance = randomInt(101);
 console.log(esperance);
 
+//Array plus pertinent plutot que if
 var randomS = randomInt(2);
 if (randomS<1) {
     sexe = 'Homme';
