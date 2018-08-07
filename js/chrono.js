@@ -22,7 +22,7 @@ function evolution() {
     $(".taille").html(taille.toFixed(1) + ' cm');
     age++;
 if (sexe===homme){
-     if (age <= 3 === ) {
+     if (age <= 3) {
         taille = taille + 20;
         $(".img").attr('src', 'img/bebe.svg');
     } else if (age <= 12) {
@@ -43,6 +43,16 @@ if (sexe===homme){
     };
 }
    
-
 };
 
+function esperancedevie(max){
+    return Math.floor(Math.random(0) * Math.floor(100))
+    
+}
+console.log(esperancedevie(5))
+
+function taille(max){
+    return Math.floor(Math.random(42) * Math.floor(57))
+
+}
+console.log(esperancedevie())
