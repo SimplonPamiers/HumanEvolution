@@ -4,7 +4,7 @@ $(document).ready(function () {
         const avatars = [];
         const genderType = ['Homme','Femme'];
         let i
-        for (i = 1; i < 10; i++) {
+        for (i = 0; i < 9; i++) {
             let avatar = {};
             avatar.num = i;
             avatar.age = 0;
@@ -34,11 +34,6 @@ $(document).ready(function () {
 
 });
 
-// $( ".btn" ).click(function (newAvatars) {
-//     console.log('click on chrono');
-//     chrono(newAvatars);
-// });
-
 function chrono() {
     console.log('click on chrono');
     var year = parseInt($(".chrono").html());
@@ -53,64 +48,50 @@ function chrono() {
         })
 
         year++;
-        if (year > 2000) {
+        if (year > 1903) {
             clearInterval(chrono);
         }
-    }, 100)
 
+    }, 100)
 }
 
 function evolution(object) {
-    // console.log('evolution num %s /',object.num);
-    // console.log('evolution age %s /',object.age);
-    // console.log('evolution height %s /',object.height);
-
-    let taille = object.height
-    
+    let taille = $('#height_'+object.num).text()
+    console.log('taille avatar %s = %s',object.num, taille)
     object.age++;
     $('#age_'+object.num).html(object.age + ' ans / ');
+    $('#height_'+object.num).html(taille + ' cm /');
+    console.log('growth is %s, ',object.growth)
 
-
-
-
-    if (object.age === object.lifeSpan){
-        $('#img_'+object.num).attr('src', 'img/rip.svg');
-        object.age = object.lifeSpan;
-        console.log('avatar %s is dead at age %s / lifespan was %s',object.num, object.age, object.lifeSpan)
-        console.log('image is %s',JSON.stringify($('#img#'+object.num).attr('src', 'img/rip.svg')))
-
-
-    }
-    else {
+    if (object.age < object.lifeSpan ) {
+    
         if (object.age <= 3) {            
         taille = taille + (20*object.growth);
         $('#img_'+object.num).attr('src', 'img/bebe.svg');
-        $('#height_'+object.num).html(taille + ' cm /').toFixed(1);
-        console.log('age <= 3 for avatar %s',object.num)
+        console.log('taille',taille)
         }
         else if (object.age <= 12){
             taille = taille + (5*object.growth);
             $('#img_'+object.num).attr('src', 'img/enfant.svg');
-            $('#height_'+object.num).html(taille + ' cm /').toFixed(1);
-            console.log('age <= 12 for avatar %s',object.num)
+            console.log('taille',taille)
         }
         else if (object.age <= 17){
             taille = taille + 2;
             $('#img_'+object.num).attr('src', 'img/' + object.gender + 'A.svg');
-            $('#height_'+object.num).html(taille + ' cm /').toFixed(1);    
-            console.log('age <= 17 for avatar %s',object.num)
+            console.log('taille',taille)
         }
         else if (object.age <= 50){
             $('#img_'+object.num).attr('src', 'img/' + object.gender + 'J.svg');
-            console.log('age <= 50 for avatar %s',object.num)        
         }
         else if (object.age <= 70){
             $('#img_'+object.num).attr('src', 'img/' +  object.gender + 'M.svg');
-            console.log('age <= 70 for avatar %s',object.num)   
         } else {
             $('#img_'+object.num).attr('src', 'img/' +  object.gender + 'V.svg');
-            console.log('age <= 100 for avatar %s',object.num)
         }
+    } else {
+        $('#img_'+object.num).attr('src', 'img/rip.svg');
+        object.age = object.lifeSpan;
+    }
 
-}
+
 };
