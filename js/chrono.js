@@ -45,7 +45,6 @@ function evolution() {
 
     age++;
 
-    console.log(taille);
 
     if (age < lifeSpan ) {
         if (age <= 3) {
