@@ -1,4 +1,15 @@
 $(document).ready(function () {
+
+    function creationCellule() {
+        // Ajoute une div avec le personnage et toutes ses informations
+        $('.wrapper').append("<div class='grid_col'><div class='row'><img class='img' src='img/bebe.svg'/></div><div class='row responsive_row'><span class='sexe'></span><span class='age'>0 ans /</span><span class='taille'></span></div></div>");
+    }
+
+    // Boucle for pour lancer la fonction 9 fois, n étant une variable permettant de vérifier à combien de case nous en sommes.
+    for (n = 0; n < 9; n++) {
+        creationCellule();   
+    }
+
     lifeSpan = Math.floor(Math.random()*100);
     console.log ('lifespan', lifeSpan);
     
@@ -14,20 +25,13 @@ $(document).ready(function () {
     
     $(".taille").html(birthSize + ' cm');
     $(".sexe").html(genre);
- age = parseInt($(".age").html());
- taille = parseFloat($(".taille").html());
- sexe = $(".sexe").html().substring(0,5);
-}
-
-
-    );
-
-
-
+    age = parseInt($(".age").html());
+    taille = parseFloat($(".taille").html());
+    sexe = $(".sexe").html().substring(0,5);
+});
 
 function chrono() {
     var year = parseInt($(".chrono").html());
-
     var chrono = setInterval(function() {
         $(".chrono").html(year);
         evolution();
