@@ -1,1 +1,0 @@
-Stocker l'objet dans le localStorage ou le sessionStorage et le récupérer lorsqu'on jour la fonction chrono!
