@@ -8,13 +8,14 @@ Class Personnage {
     //     $this->nom = "Gégé";
     // }
 
-    public function setFirstName($firstname) {
+    public function setFirstName($firstname) 
+    {
+        
         $this->first_name = $firstname;
-
-
     }
 
-    public function getFirstName() {
+    public function getFirstName() 
+    {
         return $this->first_name;
     }
 

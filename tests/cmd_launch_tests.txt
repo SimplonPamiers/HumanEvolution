@@ -1,1 +1,3 @@
-./phpunit tests/PersonnageTest
+phpunit tests/PersonnageTest
+
+trop stylén ouao ;)
