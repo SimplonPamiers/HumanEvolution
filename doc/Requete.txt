@@ -1,0 +1,73 @@
+Requêtes Poo Php:
+
+- New perso: 
+INSERT INTO personnage (lifespan, growth, birthsize, men, location)
+ VALUES ('65', '1.1', '50', 'true', '4');
+ 
+- New partie: 
+INSERT INTO partie (date_partie)
+ VALUES (2018/08/21);
+
+- Lien perso/partie: 
+INSERT INTO partie_perso 
+VALUES id_partie=1, id_perso=1;
+
+- Test perso existant:
+ SELECT * from personnage
+WHERE lifespan = '65'
+AND growth = '1.1'
+AND birthsize = '50'
+AND men = 'true'
+AND location = '4';
+
+- Requêtes stat globale:
+  - Nombre total de personnage: 
+      SELECT COUNT(*) FROM personnage
+      
+  - moyenne de l'espérance de vie: 
+      SELECT AVG(lifespan) FROM personnage
+      
+  - moyenne du taux de croissance: 
+      SELECT AVG(growth) FROM personnage
+  
+  - moyenne de la taille à la naissance:
+      SELECT AVG(birthsize) FROM personnage
+      
+  - % homme et femme:
+      WITH
+      Request1 AS (select count(*) as result1 from personnage where men =           FALSE),
+      Request2 AS (select count(*) as result2 from personnage)
+      SELECT CAST(Request1.result1 AS FLOAT) / CAST(Request2.result2 AS             FLOAT) * 100 as SexRatio
+      FROM Request1, Request2
+
+- Requêtes stat partie:
+  - moyenne de l'espérance de vie: 
+      select AVG(lifespan) from personnage
+      inner join partie_perso 
+      on personnage.id_perso = partie_perso.id_perso
+      where id_partie = 1
+      
+  - moyenne du taux de croissance: 
+      select AVG(growth) from personnage
+      inner join partie_perso 
+      on personnage.id_perso = partie_perso.id_perso
+      where id_partie = 1
+      
+  - moyenne de la taille à la naissance:
+      select AVG(birthsize) from personnage
+      inner join partie_perso 
+      on personnage.id_perso = partie_perso.id_perso
+      where id_partie = 1
+      
+  - % homme et femme:
+      WITH
+      Request1 AS (select count(*) as result1 from personnage 
+      inner join partie_perso
+      on personnage.id_perso = partie_perso.id_perso
+      where men = FALSE and id_partie = 1),
+      Request2 AS (select count(*) as result2 from personnage
+      inner join partie_perso
+      on personnage.id_perso = partie_perso.id_perso
+      where id_partie = 1)
+      SELECT CAST(Request1.result1 AS FLOAT) / CAST(Request2.result2 AS             FLOAT) * 100 as SexRatio
+      FROM Request1, Request2
