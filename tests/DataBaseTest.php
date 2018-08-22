@@ -5,12 +5,19 @@ use PHPUnit\Framework\TestCase;
 
 class DataBaseTest extends TestCase{
     
-    protected $db;
+    private $db;
     public function setUp(){
         $this->db = new DataBase;
     }
-    public function testDBparam(){
-        return $this->db->getParam();
+
+    public function testThatWeCanConnectToDatabase(){
+
+        $this->assertEquals($this->db->connect(),'connection success');
+        
+    }
+
+    public function testGetAverageSize(){
+        $this->assertEquals($this->db->getAverageSize(),'5');
     }
 }
 
