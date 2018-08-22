@@ -11,13 +11,12 @@ class DataBaseTest extends TestCase{
     }
 
     public function testThatWeCanConnectToDatabase(){
-
-        $this->assertEquals($this->db->connect(),'connection success');
-        
+        //test if connection object is not empty
+        $this->assertNotEmpty($this->db->connect());
     }
 
     public function testGetAverageSize(){
-        $this->assertEquals($this->db->getAverageSize(),'5');
+        $this->assertEquals($this->db->getAverageSize(),49.83);
     }
 }
 
